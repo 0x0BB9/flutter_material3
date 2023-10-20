@@ -13,6 +13,7 @@ const TEXT_LARGE_SIZE = 22.0;
 class _SignPageState extends State<SignPage> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  bool agreedToTerms = true;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class _SignPageState extends State<SignPage> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 60.0, horizontal: 40),
+                        vertical: 50.0, horizontal: 40),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -41,7 +42,7 @@ class _SignPageState extends State<SignPage> {
                           ),
                         ),
                         const SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         const Text(
                           "WELCOME BACK!",
@@ -68,7 +69,7 @@ class _SignPageState extends State<SignPage> {
                               fontSize: 40),
                         ),
                         const SizedBox(
-                          height: 50,
+                          height: 40,
                         ),
                         Container(
                           height: _media.height / 3.8,
@@ -91,6 +92,32 @@ class _SignPageState extends State<SignPage> {
                               ),
                             ),
                           ),
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Checkbox(
+                              value: agreedToTerms,
+                              onChanged: (value) {
+                                // When the value of the checkbox changes,
+                                // update the FormFieldState so the form is
+                                // re-validated.
+                                setState(() {
+                                  agreedToTerms = value!;
+                                });
+                              },
+                            ),
+                            const Expanded(
+                              child: Text.rich(TextSpan(
+                                  text: "I Agree",
+                                  children: [
+                                    TextSpan(
+                                        text:
+                                        " any"),
+                                    TextSpan(
+                                        text: " thing")
+                                  ])),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -117,7 +144,7 @@ class _SignPageState extends State<SignPage> {
                 ],
               ),
               Positioned(
-                bottom: _media.height / 6.3,
+                bottom: _media.height / 5,
                 right: 15,
                 child: buildSignUpArrowButton(
                   icon: Icons.arrow_forward,
