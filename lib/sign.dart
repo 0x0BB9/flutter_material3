@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SignPage extends StatefulWidget {
-
   @override
   _SignPageState createState() {
     return _SignPageState();
   }
 }
+
 const TEXT_NORMAL_SIZE = 14.0;
 const TEXT_LARGE_SIZE = 22.0;
 
@@ -16,7 +16,7 @@ const BLUE = Color(0xffabecd6);
 const SIGNUP_LIGHT_RED = Color(0xffffc2a1);
 const SIGNUP_RED = Color(0xffffb1bb);
 
-class _SignPageState extends State<SignPage>{
+class _SignPageState extends State<SignPage> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
@@ -184,12 +184,14 @@ class _SignPageState extends State<SignPage>{
                 spreadRadius: 0,
                 offset: Offset(0.0, 16.0)),
           ],
-          gradient: LinearGradient(begin: FractionalOffset.centerLeft,
+          gradient: LinearGradient(
+              begin: FractionalOffset.centerLeft,
 // Add one stop for each color. Stops should increase from 0 to 1
               stops: [
                 0.2,
                 1
-              ], colors: [
+              ],
+              colors: [
                 Color(0xff000000),
                 Color(0xff434343),
               ]),
@@ -204,11 +206,11 @@ class _SignPageState extends State<SignPage>{
   }
 
   Widget inputText(
-      String fieldName,
-      String hintText,
-      TextEditingController controller,
-      bool obSecure,
-      ) {
+    String fieldName,
+    String hintText,
+    TextEditingController controller,
+    bool obSecure,
+  ) {
     return TextField(
       style: const TextStyle(height: 1.3),
       controller: controller,
@@ -228,4 +230,3 @@ class _SignPageState extends State<SignPage>{
     );
   }
 }
-
