@@ -8,7 +8,6 @@ class SignPage extends StatefulWidget {
 }
 
 const TEXT_NORMAL_SIZE = 14.0;
-const TEXT_LARGE_SIZE = 22.0;
 
 class _SignPageState extends State<SignPage> {
   final TextEditingController _username = TextEditingController();
@@ -44,14 +43,9 @@ class _SignPageState extends State<SignPage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Text(
+                        Text(
                           "WELCOME BACK!",
-                          style: TextStyle(
-                            letterSpacing: 4,
-                            fontFamily: "Montserrat",
-                            fontWeight: FontWeight.bold,
-                            fontSize: TEXT_LARGE_SIZE,
-                          ),
+                          style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Colors.black87)
                         ),
                         const SizedBox(height: 30),
                         const Text(

@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_material_design/themes/customColors.dart';
+
+const TEXT_LARGE_SIZE = 22.0;
 
 class AppThemeData {
-
   static ThemeData lightThemeData = buildThemeData(lightColorScheme);
 
   static ThemeData buildThemeData(ColorScheme colorScheme) {
     return ThemeData(
         useMaterial3: true,
-        colorScheme: colorScheme
-    );
+        colorScheme: colorScheme,
+        cardTheme: const CardTheme(color: Color(0xff006699)),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Color(0xff006699),
+            letterSpacing: 4,
+            fontFamily: "Montserrat",
+            fontWeight: FontWeight.bold,
+            fontSize: TEXT_LARGE_SIZE,
+          ),
+        ));
   }
 
   // Color Refs to Android Material Design

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_material_design/sign.dart';
 import 'package:flutter_material_design/themes/customColors.dart';
 
+import 'themes/theme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,14 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: CustomColors.mainColor,
-            brightness: Brightness.light).copyWith(
-          background: Colors.amber
-        ),
-      ),
+      theme: AppThemeData.lightThemeData,
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
